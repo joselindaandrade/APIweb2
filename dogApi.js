@@ -21,8 +21,6 @@ https.get('https://api.thedogapi.com/v1/breeds', options, (resp) => {
     
     const server = http.createServer((req, res) => {
       res.writeHead(200, { 'Content-Type': 'text/html' });
-
-      // Loop through the breeds and display breed information
       breeds.forEach((breed) => {
         res.write(`<h1>${breed.name}</h1>`);
         res.write(`<img src="${breed.image.url}" alt="${breed.name}"/>`);
